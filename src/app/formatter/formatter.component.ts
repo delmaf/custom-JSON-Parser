@@ -12,7 +12,7 @@ export class FormatterComponent implements OnChanges {
   constructor( private element: ElementRef) {}
 
   ngOnChanges() {
-    if(Object.keys(this.data).length === 0) return;
+    if(!this.data) return;
     
     this.element.nativeElement.innerHTML = '';
     const formatter = new JSONFormatter(this.data)

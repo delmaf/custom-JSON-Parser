@@ -38,9 +38,12 @@ export class AppComponent implements AfterViewInit{
 
   submitJSON() {
     let textAreaVal = (<HTMLInputElement>document.getElementById("json")).value.trim();
-    textAreaVal = textAreaVal.replace(/(?:\\[rn])+/g, "");
-    textAreaVal = textAreaVal.replace(/\\/g, '');
+    textAreaVal = textAreaVal.replace(/(?:\\[rn])+/g, ""); // remove \r\n
+    textAreaVal = textAreaVal.replace(/\\\\"/g, ''); // remove \\\"
+    textAreaVal = textAreaVal.replace(/\\/g, ''); // remove \
     this.jsonObj = textAreaVal.replace(/(^"|"$)/g, '');
+    console.log(this.jsonObj);
+    
     this.jsonObj = JSON.parse(this.jsonObj);
   }
   
