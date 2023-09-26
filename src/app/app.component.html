@@ -1,10 +1,8 @@
 <div class="mainpage_container">
   <div class="textarea_container">
-    <label for="story">Show me you JSON:</label>
+    <label for="json">Show me you JSON:</label>
 
-    <textarea id="json" name="json" rows="2" cols="auto" (keyup.enter)="onEnter()" >
-    
-    </textarea>
+    <textarea id="json" name="json" rows="2" cols="auto" (keyup.enter)="onEnter()" (click)="textAreaClick($event)"></textarea>
     <div class="buttons_container">
       <button (click)="minusclick()">-</button>
       <button (click)="submitJSON()">Submit</button>

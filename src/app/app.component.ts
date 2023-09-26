@@ -32,6 +32,10 @@ export class AppComponent implements AfterViewInit{
     this.submitJSON();
   }
 
+  textAreaClick(event){
+    event.target.select();
+  }
+
   submitJSON() {
     let textAreaVal = (<HTMLInputElement>document.getElementById("json")).value.trim();
     textAreaVal = textAreaVal.replace(/(?:\\[rn])+/g, "");
